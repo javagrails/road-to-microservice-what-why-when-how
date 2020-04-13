@@ -1,4 +1,4 @@
-# Road to Microservice Understanding
+# Road to Microservice What Why When How
 A complete concept and implementation of microservice application with technologies__ 
 1. Java
 2. Spring Boot
@@ -6,5 +6,5 @@ A complete concept and implementation of microservice application with technolog
 4. RabbitMQ (message queuing)
 5. Angular (as UI)
 6. Zuul (is an L7 application gateway that provides capabilities for dynamic routing, monitoring, resiliency, security, and more)
-7. Ribbon (use by  Zuul as Load Balancer)
+7. Ribbon (use by Zuul as Load Balancer)
 
