@@ -34,6 +34,65 @@ git clone git@github.com-javagrails:javagrails/road-to-microservice-what-why-whe
 =========================================================================================================
 =========================================================================================================
 =========================================================================================================
-=========================================================================================================
+==================================== RabbitMQ Installation ==============================================
+https://packagecloud.io/rabbitmq/rabbitmq-server/install#bash-deb
+
+https://askubuntu.com/questions/1188699/rabbitmq-packages-have-unmet-dependencies
+
+curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.deb.sh | sudo bash
+echo "deb http://www.rabbitmq.com/debian/ testing main"  | sudo tee  /etc/apt/sources.list.d/rabbitmq.list > /dev/null
+sudo rm /etc/apt/sources.list.d/rabbitmq.list
+wget https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
+
+
+curl -fsSL https://github.com/rabbitmq/signing-keys/releases/download/2.0/rabbitmq-release-signing-key.asc | sudo apt-key add -
+sudo apt-get install apt-transport-https
+echo "deb http://dl.bintray.com/rabbitmq-erlang/debian xenial erlang-22.x"  | sudo tee  /etc/apt/sources.list.d/bintray.erlang.list > /dev/null
+sudo apt-get update -y
+sudo apt-get install -y erlang-base \
+                    erlang-asn1 erlang-crypto erlang-eldap erlang-ftp erlang-inets \
+                    erlang-mnesia erlang-os-mon erlang-parsetools erlang-public-key \
+                    erlang-runtime-tools erlang-snmp erlang-ssl \
+                    erlang-syntax-tools erlang-tftp erlang-tools erlang-xmerl
+
+
+
+sudo apt-get install curl gnupg -y
+curl -fsSL https://github.com/rabbitmq/signing-keys/releases/download/2.0/rabbitmq-release-signing-key.asc | sudo apt-key add -
+echo "deb https://dl.bintray.com/rabbitmq/debian xenial main" | sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list
+sudo apt-get update -y
+sudo apt-get install -y rabbitmq-server
+
+whereis rabbitmq-server
+rabbitmq-server: /usr/sbin/rabbitmq-server /usr/share/man/man8/rabbitmq-server.8.gz
+whereis rabbitmq
+rabbitmq: /usr/lib/rabbitmq /etc/rabbitmq
+
+sudo service rabbitmq-server start
+sudo service rabbitmq-server status
+sudo service rabbitmq-server stop
+
+================================= Rabbitmq Management ===============================
+https://www.youtube.com/watch?v=2SE9w1XfevA
+https://www.youtube.com/watch?v=F4PvutsQJlc
+
+https://stackoverflow.com/questions/5250664/whats-the-best-way-to-monitor-rabbitmq-to-make-sure-everything-is-running-smoot/29343546
+
+sudo rabbitmq-plugins enable rabbitmq_management
+Enabling plugins on node rabbit@salmanpc:
+sudo service rabbitmq-server restart
+user/pass :: guest/guest
+http://rabbitmq-server-ip:15672
+http://localhost:15672
+
+http://localhost:15672/api/overview
+
+sudo rabbitmqctl status
+
+
+
+
+
+
 =========================================================================================================
 https://github.com/integrations/slack
