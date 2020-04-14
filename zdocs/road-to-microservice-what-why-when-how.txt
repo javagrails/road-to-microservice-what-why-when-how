@@ -1,0 +1,39 @@
+https://github.com/hnjaman/complete-microservice-application
+https://medium.com/backend-habit/intellij-idea-running-multiple-project-microservices-in-one-workspace-d61126fe0eef
+
+https://github.com/javagrails/road-to-microservice-what-why-when-how
+https://www.rabbitmq.com/install-debian.html
+
+https://github.com/Netflix/zuul
+https://github.com/Netflix/zuul/wiki
+
+===========================================
+01. ms-ui (A Separate Angular Application)
+02. ms-console (A Service Registry/Discovery/Eureka/Ribbon/Load Balancer/Request Router application)
+03. blood-bank-api-gateway (An Api gateway where all microservices will be connected)
+04. ms-one-bank-a (A bank of A group blood)
+05. ms-two-bank-b (A bank of B group blood)
+06. ms-three-bank-ab (A bank of AB group blood)
+07. ms-four-bank-o (A bank of O group blood)
+08. Docker will use in different microservices (Database/RabbitMQ/any other purpose)
+09. Documentation
+10. Deployment (LocalHost)
+
+
+
+git clone git@github.com-javagrails:javagrails/concepts.git
+
+git clone git@github.com-javagrails:javagrails/road-to-microservice-what-why-when-how.git
+
+
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+https://github.com/integrations/slack
