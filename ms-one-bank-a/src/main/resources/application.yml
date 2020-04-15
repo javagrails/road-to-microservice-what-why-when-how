@@ -1,0 +1,51 @@
+# https://stackoverflow.com/questions/56514100/how-to-use-eureka-client-service-url-property-of-netflix-eureka-in-spring-cloud
+# https://thepracticaldeveloper.com/2018/03/18/spring-boot-service-discovery-eureka/
+# https://www.baeldung.com/spring-cloud-netflix-eureka
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+    service-url:
+      default-zone: http://${eureka.instance.hostname}:8761/eureka
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 8081
+spring:
+  application:
+    name: ms-one-bank-a
+  datasource:
+    driver-class-name: org.h2.Driver
+    password: root
+    #url: jdbc:h2:file:~/product;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+    url: jdbc:h2:file:~/msdbase/${spring.application.name};DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+    username: root
+  devtools:
+    livereload:
+      port: 35730
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    show-sql: true

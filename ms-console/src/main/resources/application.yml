@@ -1,0 +1,28 @@
+# https://www.baeldung.com/spring-cloud-netflix-eureka
+
+server:
+  port: 8761
+#  servlet: #not-needed
+#    context-path: / #not-needed
+
+spring:
+  application:
+    name: ms-console
+#  freemarker: #not-needed
+#    prefer-file-system-access: false #not-needed
+#    template-loader-path: classpath:/templates/ #not-needed
+
+# eureka by default will register itself as a client. So, no need to set eureka.client.register-with-eureka=true
+# https://github.com/Netflix/eureka/issues/1094
+# https://itnext.io/how-to-use-netflixs-eureka-and-spring-cloud-for-service-registry-8b43c8acdf4e
+# https://aboullaite.me/service-registration-discovery-with-spring-cloud-netflix-eureka/
+# https://github.com/spring-cloud/spring-cloud-netflix/issues/838
+# https://www.twilio.com/blog/eureka-zuul-service-discovery-dynamic-routing-javascript-microservices-node-js
+eureka: #not-needed
+  client: #not-needed
+    register-with-eureka: true #not-needed
+    fetch-registry: false #not-needed
+  service-url:
+    default-zone: http://localhost:8761/eureka
+
+# eureka server will run on this [http://localhost:8761] url in localhost
