@@ -1,6 +1,4 @@
-HELP.md
 target/
-*maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
 

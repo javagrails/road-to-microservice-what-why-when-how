@@ -1,0 +1,44 @@
+# https://softwarefactory-project.io/docs/zuul/user/config.html
+# https://stackoverflow.com/questions/49070923/spring-cloud-zuul-configuration-in-yml
+# https://engineering.pivotal.io/post/local-eureka-zuul-cloud_config-with-spring
+## https://medium.com/@iroshan.du/spring-boot-micro-services-with-eureka-and-zuul-proxy-with-fegin-client-68a3ad78453b
+## https://howtodoinjava.com/spring-cloud/spring-cloud-api-gateway-zuul
+## https://howtodoinjava.com/microservices/microservices-definition-principles-benefits
+## https://www.mscharhag.com/spring/api-gateway-with-spring-cloud-zuul
+# https://bushkarl.gitbooks.io/spring-cloud/content/spring_cloud_netflix/router_and_filter_zuul.html
+## https://spring.io/guides/gs/routing-and-filtering
+## https://medium.com/@jegasingamjeyanthasingam/zuul-functionality-routing-proxy-and-filters-285f911146ea
+### https://grokonez.com/spring-framework/spring-cloud/configure-springboot-zuul-routing-filtering
+
+
+server:
+  port: 8000
+
+spring:
+  application:
+    name: blood-bank-api-gateway
+
+zuul:
+  routes:
+    ms-one-bank-a:
+      path: /ms-one-bank-a/**
+      service-id: ms-one-bank-a
+      strip-prefix: true
+    ms-two-bank-b:
+      path: /ms-two-bank-b/**
+      service-id: ms-two-bank-b
+      strip-prefix: true
+  ignored-services: '*'
+
+endpoints:
+  routes:
+    sensitive: false
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true

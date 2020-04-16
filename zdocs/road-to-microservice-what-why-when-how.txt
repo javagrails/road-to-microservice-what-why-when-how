@@ -9,10 +9,10 @@ https://github.com/Netflix/zuul/wiki
 
 ===========================================
 01. ms-ui (A Separate Angular Application)
-02. ms-console (A Service Registry/Discovery/Eureka/Ribbon/Load Balancer/Request Router application)
+X02. ms-console (A Service Registry/Discovery/Eureka/Ribbon/Load Balancer/Request Router application)
 03. blood-bank-api-gateway (An Api gateway where all microservices will be connected)
-04. ms-one-bank-a (A bank of A group blood)
-05. ms-two-bank-b (A bank of B group blood)
+X04. ms-one-bank-a (A bank of A group blood)
+X05. ms-two-bank-b (A bank of B group blood)
 06. ms-three-bank-ab (A bank of AB group blood)
 07. ms-four-bank-o (A bank of O group blood)
 08. Docker will use in different microservices (Database/RabbitMQ/any other purpose)
@@ -33,8 +33,10 @@ jdbc:h2:file:~/msdbase/ms-one-bank-a
 =========================================================================================================
 =========================================================================================================
 =========================================================================================================
-=========================================================================================================
+=05==================================== blood-bank-api-gateway ==========================================
+
 =04==================================== ms-two-bank-b ===================================================
+This a microservice just a spring boot web rest api application
 
 =03==================================== ms-one-bank-a ===================================================
 This a microservice just a spring boot web rest api application
